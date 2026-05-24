@@ -1,0 +1,202 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAOFIQ-CSC102 Assembly Language Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0ebf8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 640px;
+        }
+        .header-card {
+            background-color: white;
+            border-radius: 8px;
+            border-top: 10px solid #673ab7;
+            padding: 24px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .header-card h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 400;
+        }
+        .header-card p {
+            margin: 0;
+            color: #202124;
+            font-size: 14px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border: 1px solid #dadce0;
+        }
+        .question-title {
+            font-size: 16px;
+            line-height: 24px;
+            color: #202124;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            cursor: pointer;
+            font-size: 14px;
+            color: #202124;
+        }
+        .option-label input {
+            margin-right: 12px;
+            accent-color: #673ab7;
+            width: 18px;
+            height: 18px;
+        }
+        .submit-btn {
+            background-color: #673ab7;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .submit-btn:hover {
+            background-color: #5e35b1;
+        }
+        #result-box {
+            display: none;
+            background-color: #e8f0fe;
+            border: 1px solid #1a73e8;
+            color: #1a73e8;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .feedback {
+            margin-top: 8px;
+            font-size: 13px;
+            display: none;
+            font-weight: bold;
+        }
+        .correct { color: #137333; }
+        .wrong { color: #c5221f; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="header-card">
+        <h1>TAOFIQ-CSC102 Assignment Quiz</h1>
+        <p>Assembly Language and System Programming. Choose your answers below to test your knowledge.</p>
+    </div>
+
+    <form id="quizForm">
+        <!-- Q1 -->
+        <div class="question-card" data-correct="B">
+            <div class="question-title">1. What is the primary function of a programming language translator?</div>
+            <label class="option-label"><input type="radio" name="q1" value="A"> To optimize the physical hardware speed of a computer processor</label>
+            <label class="option-label"><input type="radio" name="q1" value="B"> To translate a program from one language into a functionally equivalent program in another language without losing its logical structure</label>
+            <label class="option-label"><input type="radio" name="q1" value="C"> To create graphical user interfaces for database applications</label>
+            <label class="option-label"><input type="radio" name="q1" value="D"> To completely delete the source code after execution</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card" data-correct="C">
+            <div class="question-title">2. If a translator translates a high-level language into assembly language, it is called a(n):</div>
+            <label class="option-label"><input type="radio" name="q2" value="A"> Interpreter</label>
+            <label class="option-label"><input type="radio" name="q2" value="B"> Decompiler</label>
+            <label class="option-label"><input type="radio" name="q2" value="C"> Compiler</label>
+            <label class="option-label"><input type="radio" name="q2" value="D"> Assembler</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card" data-correct="A">
+            <div class="question-title">3. Which type of language processor translates machine code into assembly language?</div>
+            <label class="option-label"><input type="radio" name="q3" value="A"> Disassembler</label>
+            <label class="option-label"><input type="radio" name="q3" value="B"> Decompiler</label>
+            <label class="option-label"><input type="radio" name="q3" value="C"> Macro-Assembler</label>
+            <label class="option-label"><input type="radio" name="q3" value="D"> Cross-Assembler</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-card" data-correct="B">
+            <div class="question-title">4. During the compilation process of a Java program, what intermediate file format is produced right before the JVM handles it?</div>
+            <label class="option-label"><input type="radio" name="q4" value="A"> C++ file (.cpp)</label>
+            <label class="option-label"><input type="radio" name="q4" value="B"> Bytecodes (.class)</label>
+            <label class="option-label"><input type="radio" name="q4" value="C"> Raw Machine Code</label>
+            <label class="option-label"><input type="radio" name="q4" value="D"> Assembly file</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card" data-correct="B">
+            <div class="question-title">5. What does a Two-Pass Assembler do during its very first pass over the source file?</div>
+            <label class="option-label"><input type="radio" name="q5" value="A"> It assembles all instructions into binary code immediately</label>
+            <label class="option-label"><input type="radio" name="q5" value="B"> It looks only for label definitions, collecting them into a symbol table</label>
+            <label class="option-label"><input type="radio" name="q5" value="C"> It executes the program to check for performance runtime errors</label>
+            <label class="option-label"><input type="radio" name="q5" value="D"> It completely prints out the final assembly listing</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-card" data-correct="C">
+            <div class="question-title">6. Which type of assembler runs on one computer architecture but generates object code for a completely different computer architecture?</div>
+            <label class="option-label"><input type="radio" name="q6" value="A"> Resident Assembler</label>
+            <label class="option-label"><input type="radio" name="q6" value="B"> Meta Assembler</label>
+            <label class="option-label"><input type="radio" name="q6" value="C"> Cross Assembler</label>
+            <label class="option-label"><input type="radio" name="q6" value="D"> One-pass Assembler</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-card" data-correct="C">
+            <div class="question-title">7. Which of the following is NOT a defined function of an assembler?</div>
+            <label class="option-label"><input type="radio" name="q7" value="A"> Generating machine code output</label>
+            <label class="option-label"><input type="radio" name="q7" value="B"> Providing program error information for the programmer</label>
+            <label class="option-label"><input type="radio" name="q7" value="C"> Translating high-level Java code directly into an intermediate bytecode format</label>
+            <label class="option-label"><input type="radio" name="q7" value="D"> Assigning memory for data and instructions</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-card" data-correct="D">
+            <div class="question-title">8. What is a primary reason an expert programmer would choose to write a program in assembly language instead of a high-level language?</div>
+            <label class="option-label"><input type="radio" name="q8" value="A"> Hardware portability across different families of machines</label>
+            <label class="option-label"><input type="radio" name="q8" value="B"> Easier syntax readability for beginners</label>
+            <label class="option-label"><input type="radio" name="q8" value="C"> Automatic integration with cloud databases</label>
+            <label class="option-label"><input type="radio" name="q8" value="D"> Execution Performance (speed and smaller code size) & machine access</label>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-card" data-correct="C">
+            <div class="question-title">9. Which basic element of an assembly program is responsible for holding the instruction that is currently being executed?</div>
+            <label class="option-label"><input type="radio" name="q9" value="A"> Control Status Register (CSR)</label>
+            <label class="option-label"><input type="radio" name="q9" value="B"> Operand</label>
+            <label class="option-label"><input type="radio" name="q9" value="C"> Instruction Register (IR)</label>
+
+</body>
+</html>
